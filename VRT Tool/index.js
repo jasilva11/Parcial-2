@@ -75,7 +75,7 @@ app.get('/', function(req, res) {
 	    }
     });
     htmlFinal+=`<h2>Number of founded errors: ${foundedMutants}</h2></br>` + newLine;
-    htmlFinal+=`<h2>Density: ${(foundedMutants/1066)*100}%</h2></br>` + newLine;
+    htmlFinal += `<h2>Density: ${(foundedMutants / (getDirectories('../screenshots').length - 1)) * 100}%</h2></br>` + newLine;
 
     fs.writeFileSync(`reports/index.html`, htmlFinal);
     res.send('Report generated');    
